@@ -1,0 +1,598 @@
+:root {
+  --primary-green: #387c29;
+  --dark-text: #333333;
+  --light-grey: #f2f2f2;
+  --medium-grey: #cccccc;
+  --white: #ffffff;
+}
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: var(--dark-text);
+  background-color: var(--white);
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Navigation */
+header {
+  background-color: var(--primary-green);
+  padding: 15px 20px;
+}
+
+header a.logo {
+  display: inline-block;
+  color: var(--white);
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 30px;
+}
+
+nav.main-nav {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+nav.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav.main-nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav.main-nav ul li a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 5px 0;
+}
+
+nav.main-nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--primary-green);
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Global Layout */
+main {
+  text-align: center;
+  padding: 1em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav {
+  margin-bottom: 2em;
+}
+
+.loading-container {
+  text-align: center;
+  padding: 2em;
+}
+
+/* Cards */
+.card {
+  background: var(--white);
+  border: 1px solid var(--medium-grey);
+  border-radius: 3px;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+/* Buttons (Custom) */
+.button,
+.btn {
+  display: inline-block;
+  background: var(--primary-green);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover,
+.btn:hover {
+  background: #2f631f; /* slightly darker green */
+}
+
+/* Override Bootstrap Buttons */
+.btn-primary {
+  background-color: var(--primary-green) !important;
+  border-color: var(--primary-green) !important;
+}
+
+.btn-primary:hover {
+  background-color: #2f631f !important;
+  border-color: #2f631f !important;
+}
+
+/* If you have buttons like 'Remove from My Horses' mapped to .btn-danger, override that too */
+.btn-danger {
+  background-color: #5c8855 !important; /* a lighter green variant instead of red */
+  border-color: #5c8855 !important;
+  color: var(--white) !important;
+}
+
+.btn-danger:hover {
+  background-color: #4b6d46 !important;
+  border-color: #4b6d46 !important;
+}
+
+/* Links */
+a {
+  color: var(--primary-green);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Forms and Inputs */
+input,
+select,
+textarea {
+  border: 1px solid var(--medium-grey);
+  padding: 8px;
+  border-radius: 3px;
+  width: 100%;
+  max-width: 300px;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  background: var(--light-grey);
+  padding: 20px;
+  text-align: center;
+  color: var(--dark-text);
+}
+
+footer a {
+  color: var(--primary-green);
+}
+
+/* Utility classes */
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.notification {
+  margin: 1em auto;
+  max-width: 1200px;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin: 2em auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: sans-serif;
+}
+
+.messages {
+  flex: 1;
+  padding: 1em;
+  overflow-y: auto;
+  max-height: 400px;
+  background: #fafafa;
+}
+
+.message {
+  margin: 0.5em 0;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.user-msg {
+  margin-left: auto;
+  background: #e0ffe0;
+  text-align: right;
+  border-radius: 10px 10px 0 10px;
+  padding: 0.5em;
+}
+
+.assistant-msg {
+  margin-right: auto;
+  background: #f0f0f0;
+  text-align: left;
+  border-radius: 10px 10px 10px 0;
+  padding: 0.5em;
+}
+
+.input-bar {
+  display: flex;
+  border-top: 1px solid #ccc;
+  padding: 0.5em;
+  background: #fff;
+}
+
+.error {
+  background: #ffe0e0;
+  color: #b00;
+  padding: 0.5em;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.msg-content {
+  white-space: pre-wrap;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.input {
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pagination {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.empty-state {
+  padding: 3rem;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  margin: 2rem 0;
+}
+
+/* Another definition for loading-container if needed */
+.loading-container {
+  padding: 2rem;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  margin: 2rem 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* NAVBAR (Overriding .is-info with green) */
+.navbar.is-info,
+.navbar.is-info .navbar-menu,
+.navbar.is-info .navbar-item,
+.navbar.is-info .navbar-link {
+  background-color: var(--primary-green) !important;
+  color: var(--white) !important;
+}
+
+.navbar.is-info .navbar-item:hover,
+.navbar.is-info .navbar-link:hover {
+  background-color: #2f631f !important;
+}
+
+/* BUTTONS */
+.button.is-light {
+  background-color: #e0ffe0 !important;
+  color: var(--dark-text) !important;
+  border: 1px solid #2f631f !important;
+}
+
+.button.is-light:hover {
+  background-color: #c4f2c4 !important;
+}
+
+.button.is-info {
+  background-color: var(--primary-green) !important;
+  border-color: var(--primary-green) !important;
+  color: var(--white) !important;
+}
+
+.button.is-info:hover {
+  background-color: #2f631f !important;
+  border-color: #2f631f !important;
+}
+
+.button.is-primary {
+  background-color: var(--primary-green) !important;
+  border-color: var(--primary-green) !important;
+  color: var(--white) !important;
+}
+
+.button.is-primary:hover {
+  background-color: #2f631f !important;
+  border-color: #2f631f !important;
+}
+
+/* LOADING WIDGET (PROGRESS BAR) */
+.progress.is-info,
+.progress.is-primary {
+  background-color: #e0ffe0 !important; /* track color */
+}
+
+.progress.is-info::-webkit-progress-value,
+.progress.is-primary::-webkit-progress-value {
+  background-color: var(--primary-green) !important;
+}
+
+.notification.is-info,
+.notification.is-success {
+  background-color: var(--primary-green) !important;
+  color: var(--white) !important;
+}
+
+/* Progress bar overrides for .is-info */
+/* .progress.is-info {
+  background-color: #e0ffe0 !important; /* track background */
+/* }  */
+
+/* For determinate states (when value is set) */
+/* .progress.is-info::-webkit-progress-bar {
+  background-color: #e0ffe0 !important;
+}
+
+.progress.is-info::-webkit-progress-value {
+  background-color: var(--primary-green) !important;
+}
+
+.progress.is-info::-moz-progress-bar {
+  background-color: var(--primary-green) !important;
+} */
+
+/* For indeterminate states (no value attribute) */
+/* .progress.is-info:not([value])::after {
+  background-image: none !important;
+  background-color: var(--primary-green) !important; */
+/* } */
+
+.button.is-info {
+  color: var(--white) !important;
+}
+
+.button.is-info a {
+  color: var(--white) !important;
+}
+
+/* Chat wrapper and title */
+.chat-wrapper {
+  max-width: 700px;
+  margin: 2em auto;
+  background: var(--white);
+  border: 1px solid var(--medium-grey);
+  border-radius: 5px;
+  padding: 1em;
+}
+
+.chat-title {
+  text-align: center;
+  color: var(--primary-green);
+  font-weight: bold;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+}
+
+/* Container for the chat */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 1em;
+}
+
+/* Messages area */
+.messages {
+  flex: 1;
+  padding: 1em;
+  overflow-y: auto;
+  max-height: 300px;
+  background: #fff;
+  border-radius: 5px;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+/* If no messages, show a placeholder */
+.no-messages {
+  text-align: center;
+  color: var(--dark-text);
+  font-style: italic;
+}
+
+/* Message styles */
+.message {
+  margin: 0.5em 0;
+  max-width: 80%;
+  word-wrap: break-word;
+  padding: 0.5em;
+  border-radius: 10px;
+}
+
+/* User messages (right-aligned) */
+.user-msg {
+  margin-left: auto;
+  background: #daf4da; /* Light green background */
+  text-align: right;
+  border-radius: 10px 10px 0 10px;
+}
+
+/* Assistant messages (left-aligned) */
+.assistant-msg {
+  margin-right: auto;
+  background: #f0f0f0;
+  text-align: left;
+  border-radius: 10px 10px 10px 0;
+}
+
+/* Message content */
+.msg-content {
+  white-space: pre-wrap;
+}
+
+/* Error message */
+.error {
+  background: #ffe0e0;
+  color: #b00;
+  padding: 0.5em;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+
+/* Input bar */
+.input-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+/* Input takes all the remaining space */
+.input-bar input {
+  flex: 1;
+  padding: 0.5em;
+  border: 1px solid var(--medium-grey);
+  border-radius: 3px;
+}
+
+/* Send button aligned to the right due to flex */
+.input-bar button {
+  background-color: var(--primary-green);
+  color: var(--white);
+  border: none;
+  border-radius: 3px;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+.input-bar button:hover {
+  background-color: #2f631f;
+}
+/* Messages area */
+.messages {
+  flex: 1;
+  padding: 1em;
+  overflow-y: auto;
+  max-height: 400px;
+  background: #fff;
+  border-radius: 5px;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+}
+
+/* Common message styling */
+.message {
+  margin: 0.5em 0;
+  max-width: 80%;
+  word-wrap: break-word;
+  padding: 0.5em;
+  border-radius: 10px;
+}
+
+/* User messages (right-aligned, green tint) */
+.user-msg {
+  margin-left: auto;
+  background: #daf4da; /* a subtle green background */
+  text-align: right;
+  border-radius: 10px 10px 0 10px;
+}
+
+/* Assistant messages (left-aligned, grey background) */
+.assistant-msg {
+  margin-right: auto;
+  background: #f0f0f0;
+  text-align: left;
+  border-radius: 10px 10px 10px 0;
+}
+
+.msg-content {
+  white-space: pre-wrap;
+}
+
+/* Error message styling */
+.error {
+  background: #ffe0e0;
+  color: #b00;
+  padding: 0.5em;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+
+/* Input bar styles */
+.input-bar {
+  display: flex;
+  border-top: 1px solid #ccc;
+  padding: 0.5em;
+  background: #fff;
+  border-radius: 5px;
+}
+
+/* Input field */
+.input-bar input {
+  flex: 1;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  border: 1px solid var(--medium-grey);
+  border-radius: 3px;
+}
+
+/* Send button styled with your green theme */
+.input-bar button {
+  background-color: var(--primary-green);
+  color: var(--white);
+  border: none;
+  border-radius: 3px;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.input-bar button:hover {
+  background-color: #2f631f;
+}
